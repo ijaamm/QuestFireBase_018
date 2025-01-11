@@ -29,5 +29,14 @@ fun PengelolaHalaman(
                 },
             )
         }
+        composable(DestinasiInsert.route) {
+            InsertScreen(
+                onBack = {
+                    navController.popBackStack() },
+                onNavigate = {
+                    navController.navigate(DestinasiHome.route)
+                }
+            )
+        }
     }
 }
