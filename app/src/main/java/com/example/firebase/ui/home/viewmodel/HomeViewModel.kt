@@ -41,6 +41,16 @@ class HomeViewModel(
                 }
         }
     }
+
+    fun deleteMhs(mahasiswa: Mahasiswa){
+        viewModelScope.launch {
+            try {
+                repositoryMhs.deleteMhs(mahasiswa)
+            }catch (e: Exception){
+                mhsUiState = HomeUiState.Error(e)
+            }
+        }
+    }
 }
 
 sealed class HomeUiState{
