@@ -52,6 +52,7 @@ fun HomeScreen(
     navigateToitemEntry: () -> Unit,
     modifier: Modifier = Modifier,
     onDetailClick: (String) -> Unit = {},
+    onDeleteClick: (Mahasiswa) -> Unit = {},
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -79,8 +80,8 @@ fun HomeScreen(
             retryAction = { viewModel.getMhs() },
             modifier = Modifier.padding(innerPadding),
             onDetailClick = onDetailClick, onDeleteClick = {
-                viewModel.getMhs()
-            }
+                viewModel.deleteMhs(it)
+            },
         )
     }
 }
