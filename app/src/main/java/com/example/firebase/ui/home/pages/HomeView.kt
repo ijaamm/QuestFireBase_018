@@ -141,17 +141,17 @@ fun MhsCard(
                         contentDescription = null
                     )
                 }
-                Text(
-                    text = mahasiswa.nim,
-                    style = MaterialTheme.typography.titleMedium
-                )
             }
             Text(
-                text = mahasiswa.kelas,
+                text = mahasiswa.nim,
                 style = MaterialTheme.typography.titleMedium
             )
             Text(
                 text = mahasiswa.alamat,
+                style = MaterialTheme.typography.titleMedium
+            )
+            Text(
+                text = mahasiswa.judul,
                 style = MaterialTheme.typography.titleMedium
             )
         }
